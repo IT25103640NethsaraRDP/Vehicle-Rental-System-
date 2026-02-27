@@ -1,0 +1,10 @@
+# reviews.txt
+# FORMAT: reviewId,vehicleId,customerId,rating,comment,reviewDate,status,type,typeSpecificField
+# type = CustomerReview | AdminReview
+# CustomerReview extra: verifiedPurchase (true/false)
+# AdminReview extra:    adminNote
+# status = Pending | Published | Removed
+#
+R001,V001,C001,5,Great car very clean and smooth drive,2025-02-06,Published,CustomerReview,true
+R002,V003,C002,4,Excellent BMW but slightly expensive,2025-02-21,Published,CustomerReview,true
+R003,V002,C003,3,Decent vehicle but AC was weak,2025-03-04,Pending,CustomerReview,false

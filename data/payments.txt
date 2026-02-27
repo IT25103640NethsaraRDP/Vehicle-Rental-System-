@@ -1,0 +1,10 @@
+# payments.txt
+# FORMAT: paymentId,bookingId,amount,paymentDate,status,type,typeSpecificField
+# type = Cash | Card | Online
+# Cash extra:   receivedBy (staff name)
+# Card extra:   cardLastFour
+# Online extra: transactionRef
+#
+P001,B001,17500.00,2025-02-05,Completed,Cash,Nuwan
+P002,B002,85000.00,2025-02-10,Completed,Card,4521
+P003,B003,12000.00,2025-03-01,Pending,Online,TXN98765

@@ -1,0 +1,11 @@
+# employees.txt
+# FORMAT: employeeId,fullName,email,phone,baseSalary,department,role,roleSpecificField
+# role = Manager | FieldStaff | OfficeStaff
+# Manager extra:    bonusAmount
+# FieldStaff extra: vehiclesManaged (count)
+# OfficeStaff extra: overtimeHours
+#
+E001,Rohan Silva,rohan@rental.com,0771111111,85000.00,Operations,Manager,15000.00
+E002,Priya Fernando,priya@rental.com,0712222222,45000.00,Fleet,FieldStaff,5
+E003,Chamara Bandara,chamara@rental.com,0753333333,40000.00,Admin,OfficeStaff,8
+E004,Dilini Perera,dilini@rental.com,0764444444,90000.00,Finance,Manager,20000.00

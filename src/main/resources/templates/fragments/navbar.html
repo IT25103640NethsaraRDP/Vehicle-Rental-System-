@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<!--
+  ─────────────────────────────────────────────────────────
+  SHARED NAVBAR FRAGMENT
+  ─────────────────────────────────────────────────────────
+  HOW TO USE THIS IN YOUR HTML PAGES:
+  Add this line inside your <body> tag:
+
+    <nav th:replace="~{fragments/navbar :: navbar}"></nav>
+
+  That's it. The navbar will appear on every page automatically.
+  ─────────────────────────────────────────────────────────
+-->
+
+<nav th:fragment="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <div class="container-fluid px-4">
+
+        <!-- Brand / Logo -->
+        <a class="navbar-brand fw-bold" href="/">
+            🚗 Vehicle Rental System
+        </a>
+
+        <!-- Mobile toggle button -->
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Nav links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/vehicles">
+                        🚙 Vehicles
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/customers">
+                        👤 Customers
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/bookings">
+                        📋 Bookings
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/payments">
+                        💳 Payments
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/employees">
+                        👔 Employees
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/reviews">
+                        ⭐ Reviews
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+</html>

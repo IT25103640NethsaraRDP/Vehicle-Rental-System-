@@ -1,0 +1,13 @@
+# vehicles.txt
+# FORMAT: vehicleId,brand,model,year,dailyRate,status,type,extraField1,extraField2
+# type = Car | Motorcycle | Truck
+# Car extra fields:     numberOfDoors,fuelType
+# Motorcycle extra:     hasSidecar (true/false)
+# Truck extra:          cargoCapacityTons
+#
+V001,Toyota,Corolla,2021,3500.00,Available,Car,4,Petrol
+V002,Honda,Civic,2022,4000.00,Available,Car,4,Petrol
+V003,BMW,X5,2023,8500.00,Rented,Car,4,Diesel
+V004,Yamaha,FZ,2020,1500.00,Available,Motorcycle,false
+V005,Honda,CB500,2021,1800.00,Available,Motorcycle,true
+V006,Isuzu,NLR,2019,6000.00,Available,Truck,2.5

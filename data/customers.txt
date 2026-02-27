@@ -1,0 +1,10 @@
+# customers.txt
+# FORMAT: customerId,fullName,email,phone,licenseNumber,type,typeSpecificField
+# type = Regular | Premium
+# Regular extra: totalRentals
+# Premium extra: membershipLevel (Gold | Platinum)
+#
+C001,Kasun Perera,kasun@email.com,0771234567,B1234567,Regular,3
+C002,Amali Silva,amali@email.com,0712345678,B7654321,Premium,Gold
+C003,Nimal Fernando,nimal@email.com,0751234567,B2345678,Regular,1
+C004,Sanduni Jayawardena,sanduni@email.com,0761234567,B3456789,Premium,Platinum

@@ -1,0 +1,8 @@
+# bookings.txt
+# FORMAT: bookingId,customerId,vehicleId,startDate,endDate,status,type
+# type = ShortTerm | LongTerm
+# status = Confirmed | Active | Completed | Cancelled
+#
+B001,C001,V001,2025-02-01,2025-02-05,Completed,ShortTerm
+B002,C002,V003,2025-02-10,2025-02-20,Active,LongTerm
+B003,C003,V002,2025-03-01,2025-03-03,Confirmed,ShortTerm
