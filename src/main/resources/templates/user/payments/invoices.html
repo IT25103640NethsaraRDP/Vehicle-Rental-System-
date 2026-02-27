@@ -1,0 +1,40 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoices - Customer Portal</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+      <div class="container-fluid px-4">
+        <a class="navbar-brand fw-bold" href="/user/dashboard"
+          >🚗 Customer Portal</a
+        >
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+      <h1>Invoices</h1>
+      <p>Download or view your rental invoices.</p>
+
+      <div class="alert alert-secondary">
+        <h5>📄 Invoice List [Placeholder]</h5>
+        <ul>
+          <li>
+            Invoice INV-2025-001 | Booking B001 | $150.00 |
+            <a href="#">Download PDF</a>
+          </li>
+        </ul>
+      </div>
+
+      <a href="/user/payments" class="btn btn-secondary">Back</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

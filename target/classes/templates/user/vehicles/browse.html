@@ -1,0 +1,56 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Browse Vehicles - Customer Portal</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+      <div class="container-fluid px-4">
+        <a class="navbar-brand fw-bold" href="/user/dashboard"
+          >🚗 Customer Portal</a
+        >
+        <a href="/user/profile" class="nav-link ms-auto">👤 My Profile</a>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+      <div class="alert alert-success">
+        <strong>👤 CUSTOMER PORTAL</strong><br />
+        Browse and book vehicles from our fleet.
+      </div>
+
+      <h1>Available Vehicles</h1>
+      <p>Find the perfect vehicle for your next rental.</p>
+
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">2023 Toyota Camry</h5>
+              <p class="card-text">Sedan • $50/day</p>
+              <a href="/user/vehicles/details" class="btn btn-primary btn-sm"
+                >View Details</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="alert alert-secondary mt-4">
+        <h5>🔍 Browse Options [Placeholder]</h5>
+        <p>
+          This will show available vehicles with filtering by type, price, and
+          availability.
+        </p>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

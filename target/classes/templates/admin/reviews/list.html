@@ -1,0 +1,40 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reviews - Admin Dashboard</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+      <div class="container-fluid px-4">
+        <a class="navbar-brand fw-bold" href="/admin/dashboard"
+          >🚗 Admin Dashboard - Reviews</a
+        >
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+      <div class="alert alert-info">
+        <strong>⭐ Staff - Review Management</strong><br />
+        Monitor customer feedback and ratings.
+      </div>
+
+      <h1>Review Management</h1>
+      <a href="/admin/reviews/add" class="btn btn-primary mb-3"
+        >+ Post Review</a
+      >
+
+      <div class="alert alert-secondary">
+        <h5>⭐ Customer Reviews [Placeholder]</h5>
+        <p>Display customer feedback with ratings and responses.</p>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

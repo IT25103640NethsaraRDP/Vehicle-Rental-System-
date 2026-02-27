@@ -1,0 +1,159 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Portal</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+      <div class="container-fluid px-4">
+        <a class="navbar-brand fw-bold" href="/user/dashboard">
+          🚗 Customer Portal
+        </a>
+        <div class="ms-auto">
+          <a href="/user/profile" class="nav-link d-inline">👤 My Profile</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid p-4">
+      <div class="alert alert-success">
+        <strong>👤 CUSTOMER PORTAL</strong><br />
+        Welcome! Book vehicles and manage your rentals.
+      </div>
+
+      <h1>Welcome to Your Rental Portal</h1>
+      <p class="text-muted">
+        Find and book vehicles, manage your reservations, and track payments.
+      </p>
+
+      <div class="row g-4 mt-4">
+        <!-- Browse Vehicles -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card border-primary">
+            <div class="card-header bg-primary text-white">
+              <h5>🚙 Browse Vehicles</h5>
+            </div>
+            <div class="card-body">
+              <p class="card-text">
+                Search and view available rental vehicles.
+              </p>
+              <a href="/user/vehicles" class="btn btn-primary btn-sm"
+                >Browse Now</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- My Bookings -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card border-primary">
+            <div class="card-header bg-primary text-white">
+              <h5>📋 My Bookings</h5>
+            </div>
+            <div class="card-body">
+              <p class="card-text">View your rentals and make new bookings.</p>
+              <a href="/user/bookings" class="btn btn-primary btn-sm"
+                >View Bookings</a
+              >
+              <a
+                href="/user/bookings/new"
+                class="btn btn-outline-primary btn-sm"
+                >New Booking</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Payments & Invoices -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card border-primary">
+            <div class="card-header bg-primary text-white">
+              <h5>💳 Payments</h5>
+            </div>
+            <div class="card-body">
+              <p class="card-text">Manage payments and download invoices.</p>
+              <a href="/user/payments" class="btn btn-primary btn-sm"
+                >Payment History</a
+              >
+              <a
+                href="/user/payments/invoices"
+                class="btn btn-outline-primary btn-sm"
+                >Invoices</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- My Reviews -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card border-primary">
+            <div class="card-header bg-primary text-white">
+              <h5>⭐ Reviews</h5>
+            </div>
+            <div class="card-body">
+              <p class="card-text">Share your experience and leave reviews.</p>
+              <a href="/user/reviews" class="btn btn-primary btn-sm"
+                >View Reviews</a
+              >
+              <a
+                href="/user/reviews/leave"
+                class="btn btn-outline-primary btn-sm"
+                >Leave Review</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- My Profile -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card border-primary">
+            <div class="card-header bg-primary text-white">
+              <h5>👤 My Account</h5>
+            </div>
+            <div class="card-body">
+              <p class="card-text">Manage your profile and account settings.</p>
+              <a href="/user/profile" class="btn btn-primary btn-sm"
+                >View Profile</a
+              >
+              <a
+                href="/user/profile/edit"
+                class="btn btn-outline-primary btn-sm"
+                >Edit</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Help & Support -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card border-primary">
+            <div class="card-header bg-primary text-white">
+              <h5>❓ Support</h5>
+            </div>
+            <div class="card-body">
+              <p class="card-text">FAQs and customer support options.</p>
+              <button class="btn btn-primary btn-sm" disabled>
+                Contact Support
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="my-5" />
+
+      <div class="text-center">
+        <p><a href="/" class="btn btn-outline-secondary">Back to Home</a></p>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
