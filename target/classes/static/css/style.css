@@ -1,0 +1,84 @@
+/* ─────────────────────────────────────────────
+   Vehicle Rental System - Global Styles
+   SE1020 OOP Project
+   ───────────────────────────────────────────── */
+
+/* Smooth page load */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navbar active link highlight */
+.navbar-nav .nav-link:hover {
+    color: #ffffff !important;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 6px;
+}
+
+/* Dashboard cards */
+.card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 12px;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12) !important;
+}
+
+/* Page title style */
+.page-title {
+    font-weight: 700;
+    color: #1E3A5F;
+    border-left: 4px solid #2563EB;
+    padding-left: 12px;
+    margin-bottom: 1.5rem;
+}
+
+/* Table improvements */
+.table th {
+    background-color: #1E3A5F;
+    color: white;
+    font-weight: 600;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #EFF6FF;
+}
+
+/* Form labels */
+.form-label {
+    font-weight: 500;
+    color: #374151;
+}
+
+/* Alert / info boxes */
+.alert-info {
+    background-color: #EFF6FF;
+    border-color: #BFDBFE;
+    color: #1E40AF;
+}
+
+/* Status badges */
+.badge-available   { background-color: #059669; }
+.badge-rented      { background-color: #2563EB; }
+.badge-maintenance { background-color: #D97706; }
+.badge-confirmed   { background-color: #059669; }
+.badge-cancelled   { background-color: #DC2626; }
+.badge-completed   { background-color: #6B7280; }
+.badge-pending     { background-color: #D97706; }
+
+/* Star rating display */
+.star-filled { color: #F59E0B; }
+.star-empty  { color: #D1D5DB; }
+
+/* Action buttons in tables */
+.btn-action {
+    padding: 3px 10px;
+    font-size: 0.8rem;
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+}
