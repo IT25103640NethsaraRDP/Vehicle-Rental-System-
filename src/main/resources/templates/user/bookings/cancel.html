@@ -1,0 +1,46 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cancel Booking - Customer Portal</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+      <div class="container-fluid px-4">
+        <a class="navbar-brand fw-bold" href="/user/dashboard"
+          >🚗 Customer Portal</a
+        >
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+      <h1>Cancel Booking</h1>
+      <p class="text-muted">Confirm cancellation of your booking.</p>
+
+      <div class="alert alert-warning">
+        <h5>⚠️ Cancellation Policy</h5>
+        <p>Free cancellation up to 48 hours before pickup date.</p>
+        <p>After 48 hours: 25% cancellation fee may apply.</p>
+      </div>
+
+      <form method="post" class="mt-4">
+        <div class="alert alert-secondary">
+          <h5>❌ Confirm Cancellation [Placeholder]</h5>
+          <p>Booking ID: B001</p>
+          <p>Refund Amount: $112.50 (after fees)</p>
+        </div>
+        <button type="submit" class="btn btn-danger">
+          Confirm Cancellation
+        </button>
+        <a href="/user/bookings/details" class="btn btn-secondary">Cancel</a>
+      </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -2,7 +2,12 @@
 
 **SE1020 — Object Oriented Programming | Group Project**
 
-A web-based vehicle rental management system built with Java Spring Boot, Thymeleaf, and Bootstrap 5. This system allows users to manage vehicles, customers, bookings, payments, employees, and reviews through a user-friendly web interface.
+A dual-portal web-based vehicle rental management system built with Java Spring Boot, Thymeleaf, and Bootstrap 5.
+
+**Two Separate Portals:**
+
+- 🔧 **Admin Dashboard** (`/admin/*`) - For staff & administrators to manage all operations
+- 👤 **Customer Portal** (`/user/*`) - For customers to browse vehicles and manage their bookings
 
 ---
 
@@ -30,69 +35,159 @@ A web-based vehicle rental management system built with Java Spring Boot, Thymel
 
 ---
 
-## 📁 Current Project Structure
+## 📁 Project Structure - Dual Portal System
 
 ```
 Vehicle-Rental-System-/
 ├── src/
 │   ├── main/
 │   │   ├── java/com/vehiclerental/
-│   │   │   ├── VehicleRentalApplication.java    ← App entry point
+│   │   │   ├── VehicleRentalApplication.java        ← App entry point
 │   │   │   ├── model/
-│   │   │   │   └── BaseEntity.java              ← Abstract parent class
+│   │   │   │   └── BaseEntity.java                  ← Abstract parent class
 │   │   │   ├── service/
-│   │   │   │   └── BaseFileService.java         ← Abstract file service
+│   │   │   │   └── BaseFileService.java             ← Abstract file service
 │   │   │   └── controller/
-│   │   │       ├── HomeController.java          ← Home page
-│   │   │       ├── VehicleController.java
-│   │   │       ├── CustomerController.java
-│   │   │       ├── BookingController.java
-│   │   │       ├── PaymentController.java
-│   │   │       ├── EmployeeController.java
-│   │   │       └── ReviewController.java
+│   │   │       ├── HomeController.java              ← Routes: /, /admin/dashboard, /user/dashboard
+│   │   │       ├── admin/                           ← 🔧 ADMIN CONTROLLERS (Staff Only)
+│   │   │       │   ├── AdminVehicleController.java  ← /admin/vehicles/*
+│   │   │       │   ├── AdminCustomerController.java ← /admin/customers/*
+│   │   │       │   ├── AdminBookingController.java  ← /admin/bookings/*
+│   │   │       │   ├── AdminPaymentController.java  ← /admin/payments/*
+│   │   │       │   ├── AdminEmployeeController.java ← /admin/employees/*
+│   │   │       │   └── AdminReviewController.java   ← /admin/reviews/*
+│   │   │       └── user/                            ← 👤 USER/CUSTOMER CONTROLLERS
+│   │   │           ├── UserVehicleController.java   ← /user/vehicles/* (Browse)
+│   │   │           ├── UserBookingController.java   ← /user/bookings/* (Self-service)
+│   │   │           ├── UserPaymentController.java   ← /user/payments/* (History & Invoices)
+│   │   │           ├── UserReviewController.java    ← /user/reviews/* (Leave Reviews)
+│   │   │           └── UserProfileController.java   ← /user/profile/* (Account)
 │   │   └── resources/
-│   │       ├── application.properties           ← App configuration
+│   │       ├── application.properties               ← App configuration
 │   │       ├── templates/
-│   │       │   ├── index.html                   ← Dashboard home page
-│   │       │   ├── fragments/navbar.html        ← Shared navbar
-│   │       │   ├── vehicles/
-│   │       │   │   ├── list.html
-│   │       │   │   ├── add.html
-│   │       │   │   └── edit.html
-│   │       │   ├── customers/
-│   │       │   │   ├── list.html
-│   │       │   │   ├── add.html
-│   │       │   │   └── edit.html
-│   │       │   ├── bookings/
-│   │       │   │   ├── list.html
-│   │       │   │   ├── add.html
-│   │       │   │   └── edit.html
-│   │       │   ├── payments/
-│   │       │   │   ├── list.html
-│   │       │   │   ├── add.html
-│   │       │   │   └── edit.html
-│   │       │   ├── employees/
-│   │       │   │   ├── list.html
-│   │       │   │   ├── add.html
-│   │       │   │   └── edit.html
-│   │       │   └── reviews/
-│   │       │       ├── list.html
-│   │       │       ├── add.html
-│   │       │       └── edit.html
+│   │       │   ├── index.html                       ← Portal selection home page
+│   │       │   ├── fragments/navbar.html            ← Shared navbar component
+│   │       │   ├── admin/                           ← 🔧 ADMIN TEMPLATES
+│   │       │   │   ├── dashboard.html               ← /admin/dashboard
+│   │       │   │   ├── vehicles/
+│   │       │   │   │   ├── list.html                ← /admin/vehicles
+│   │       │   │   │   ├── add.html                 ← /admin/vehicles/add
+│   │       │   │   │   └── edit.html                ← /admin/vehicles/edit
+│   │       │   │   ├── customers/
+│   │       │   │   │   ├── list.html
+│   │       │   │   │   ├── add.html
+│   │       │   │   │   └── edit.html
+│   │       │   │   ├── bookings/
+│   │       │   │   │   ├── list.html
+│   │       │   │   │   ├── add.html
+│   │       │   │   │   └── edit.html
+│   │       │   │   ├── payments/
+│   │       │   │   │   ├── list.html
+│   │       │   │   │   ├── add.html
+│   │       │   │   │   └── edit.html
+│   │       │   │   ├── employees/
+│   │       │   │   │   ├── list.html
+│   │       │   │   │   ├── add.html
+│   │       │   │   │   └── edit.html
+│   │       │   │   └── reviews/
+│   │       │   │       ├── list.html
+│   │       │   │       ├── add.html
+│   │       │   │       └── edit.html
+│   │       │   └── user/                            ← 👤 CUSTOMER TEMPLATES
+│   │       │       ├── dashboard.html               ← /user/dashboard
+│   │       │       ├── vehicles/
+│   │       │       │   ├── browse.html              ← /user/vehicles
+│   │       │       │   └── details.html             ← /user/vehicles/details
+│   │       │       ├── bookings/
+│   │       │       │   ├── my-bookings.html         ← /user/bookings
+│   │       │       │   ├── new.html                 ← /user/bookings/new
+│   │       │       │   ├── details.html             ← /user/bookings/details
+│   │       │       │   └── cancel.html              ← /user/bookings/cancel
+│   │       │       ├── payments/
+│   │       │       │   ├── history.html             ← /user/payments
+│   │       │       │   ├── invoices.html            ← /user/payments/invoices
+│   │       │       │   └── make-payment.html        ← /user/payments/make-payment
+│   │       │       ├── reviews/
+│   │       │       │   ├── my-reviews.html          ← /user/reviews
+│   │       │       │   └── leave.html               ← /user/reviews/leave
+│   │       │       └── profile/
+│   │       │           ├── view.html                ← /user/profile
+│   │       │           ├── edit.html                ← /user/profile/edit
+│   │       │           └── settings.html            ← /user/profile/settings
 │   │       └── static/css/
-│   │           └── style.css                    ← Global CSS styles
+│   │           └── style.css                        ← Global CSS styles
 │   └── test/
-│       └── java/com/vehiclerental/              ← Unit tests
-├── data/                                        ← Data storage files
+│       └── java/com/vehiclerental/                  ← Unit tests
+├── data/                                            ← Data storage files
 │   ├── vehicles.txt
 │   ├── customers.txt
 │   ├── bookings.txt
 │   ├── payments.txt
 │   ├── employees.txt
 │   └── reviews.txt
-├── pom.xml                                      ← Maven dependencies & config
-└── README.md                                    ← This file
+├── pom.xml                                          ← Maven dependencies & config
+└── README.md                                        ← This file
 ```
+
+---
+
+## 🔄 Portal Overview
+
+### 🔧 Admin Dashboard (`/admin/*`)
+
+**Access Level:** Staff & Administrators Only
+
+**Purpose:** Complete management of all business operations.
+
+**Key Features:**
+
+- **Vehicle Management:** Add, edit, view all vehicles in the fleet
+- **Customer Management:** Register and manage customer profiles
+- **Booking Management:** Create and modify rental bookings for customers
+- **Payment Tracking:** Record and monitor all payments
+- **Employee Directory:** Manage staff and employee information
+- **Review Management:** Monitor and moderate customer feedback
+
+**Navbar Color:** Dark (indicating staff/admin area)
+
+**Sample URLs:**
+
+- `/admin/dashboard` - Main dashboard
+- `/admin/vehicles` - List all vehicles
+- `/admin/customers/add` - Register new customer
+- `/admin/bookings` - View all bookings
+- `/admin/payments` - Payment records
+- `/admin/employees` - Staff directory
+- `/admin/reviews` - Customer reviews
+
+---
+
+### 👤 Customer Portal (`/user/*`)
+
+**Access Level:** Customers & End Users
+
+**Purpose:** Self-service booking and account management.
+
+**Key Features:**
+
+- **Browse Vehicles:** Search and view available vehicles for rent
+- **Make Bookings:** Create and manage personal rental reservations
+- **Payment Management:** View payment history and download invoices
+- **Leave Reviews:** Submit feedback and ratings on rentals
+- **Account Management:** Update profile and adjust account settings
+
+**Navbar Color:** Primary/Blue (indicating customer area)
+
+**Sample URLs:**
+
+- `/user/dashboard` - Customer dashboard
+- `/user/vehicles` - Browse available vehicles
+- `/user/vehicles/details` - View vehicle details
+- `/user/bookings` - My rental bookings
+- `/user/bookings/new` - Create new booking
+- `/user/payments` - Payment history
+- `/user/reviews/leave` - Submit a review
+- `/user/profile` - My account profile
 
 ---
 
