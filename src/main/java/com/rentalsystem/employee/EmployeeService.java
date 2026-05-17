@@ -14,6 +14,14 @@ public class EmployeeService {
     public List<Employee> getAllEmployees() {
         return employeeRepository.findAll();
     }
+    
+    public List<Employee> searchEmployees(String keyword) {
+        return employeeRepository.findByNameContainingIgnoreCase(keyword);
+    }
+
+    public Employee getEmployeeById(Long id) {
+        return employeeRepository.findById(id).orElse(null);
+    }
 
     public void addEmployee(String name, String role, double baseSalary) {
         Employee employee;
