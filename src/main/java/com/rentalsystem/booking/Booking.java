@@ -26,11 +26,12 @@ public class Booking {
 
     private LocalDate bookingDate;
     private LocalDate returnDate;
-    
-    private String status; 
+
+    private String status;
     private double totalCost;
 
-    public Booking() {}
+    public Booking() {
+    }
 
     public Booking(Customer customer, Vehicle vehicle, LocalDate bookingDate, int durationDays) {
         this.customer = customer;
@@ -38,7 +39,7 @@ public class Booking {
         this.vehicleNameSnapshot = vehicle.getBrand() + " " + vehicle.getModel();
         this.bookingDate = bookingDate;
         this.returnDate = bookingDate.plusDays(durationDays);
-        this.status = "ACTIVE";
+        this.status = "PENDING";
         calculateTotalCost(durationDays);
     }
 
@@ -48,23 +49,69 @@ public class Booking {
         this.totalCost = cost - (cost * discount);
     }
 
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
-    public Customer getCustomer() { return customer; }
-    public void setCustomer(Customer customer) { this.customer = customer; }
-    public Vehicle getVehicle() { return vehicle; }
-    public void setVehicle(Vehicle vehicle) { this.vehicle = vehicle; }
-    public LocalDate getBookingDate() { return bookingDate; }
-    public void setBookingDate(LocalDate bookingDate) { this.bookingDate = bookingDate; }
-    public LocalDate getReturnDate() { return returnDate; }
-    public void setReturnDate(LocalDate returnDate) { this.returnDate = returnDate; }
-    public String getStatus() { return status; }
-    public void setStatus(String status) { this.status = status; }
-    public double getTotalCost() { return totalCost; }
-    public void setTotalCost(double totalCost) { this.totalCost = totalCost; }
+    public Long getId() {
+        return id;
+    }
 
-    public String getVehicleNameSnapshot() { return vehicleNameSnapshot; }
-    public void setVehicleNameSnapshot(String vehicleNameSnapshot) { this.vehicleNameSnapshot = vehicleNameSnapshot; }
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public Vehicle getVehicle() {
+        return vehicle;
+    }
+
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
+    }
+
+    public LocalDate getBookingDate() {
+        return bookingDate;
+    }
+
+    public void setBookingDate(LocalDate bookingDate) {
+        this.bookingDate = bookingDate;
+    }
+
+    public LocalDate getReturnDate() {
+        return returnDate;
+    }
+
+    public void setReturnDate(LocalDate returnDate) {
+        this.returnDate = returnDate;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public double getTotalCost() {
+        return totalCost;
+    }
+
+    public void setTotalCost(double totalCost) {
+        this.totalCost = totalCost;
+    }
+
+    public String getVehicleNameSnapshot() {
+        return vehicleNameSnapshot;
+    }
+
+    public void setVehicleNameSnapshot(String vehicleNameSnapshot) {
+        this.vehicleNameSnapshot = vehicleNameSnapshot;
+    }
 
     public String getDisplayVehicleName() {
         return vehicle != null ? vehicle.getBrand() + " " + vehicle.getModel() : vehicleNameSnapshot;
