@@ -25,17 +25,20 @@ public class BookingService {
 
     @Transactional
     public Long createBooking(Long customerId, Long vehicleId, int durationDays) throws Exception {
-        Customer customer = customerRepository.findById(customerId).orElseThrow(() -> new Exception("Customer not found"));
+        Customer customer = customerRepository.findById(customerId)
+                .orElseThrow(() -> new Exception("Customer not found"));
         Vehicle vehicle = vehicleRepository.findById(vehicleId).orElseThrow(() -> new Exception("Vehicle not found"));
-        
+
         if (!vehicle.isAvailable()) {
             throw new Exception("Vehicle is not available for booking.");
         }
 
         Booking booking = new Booking(customer, vehicle, LocalDate.now(), durationDays);
-        booking.setStatus("PENDING");
+        if (booking.getStatus() != "PENDING") {
+            booking.setStatus("PENDING");
+        }
         booking = bookingRepository.save(booking);
-        
+
         return booking.getId();
     }
 
@@ -56,7 +59,7 @@ public class BookingService {
     @Transactional
     public void returnVehicle(Long bookingId) throws Exception {
         Booking booking = bookingRepository.findById(bookingId).orElseThrow(() -> new Exception("Booking not found"));
-        
+
         if ("ACTIVE".equalsIgnoreCase(booking.getStatus())) {
             booking.setStatus("COMPLETED");
             if (booking.getVehicle() != null) {
@@ -67,6 +70,7 @@ public class BookingService {
         }
     }
 
+    @Transactional
     public void cancelBooking(Long bookingId) throws Exception {
         Booking booking = bookingRepository.findById(bookingId).orElseThrow(() -> new Exception("Booking not found"));
         if ("ACTIVE".equalsIgnoreCase(booking.getStatus()) || "PENDING".equalsIgnoreCase(booking.getStatus())) {

@@ -17,10 +17,10 @@ public class BookingController {
 
     @Autowired
     private BookingService bookingService;
-    
+
     @Autowired
     private CustomerService customerService;
-    
+
     @Autowired
     private VehicleService vehicleService;
 
@@ -28,14 +28,15 @@ public class BookingController {
     public String showBookingForm(Model model) {
         List<Customer> customers = customerService.getAllCustomers().stream().filter(Customer::isActive).toList();
         List<Vehicle> vehicles = vehicleService.getAvailableVehicles();
-        
+
         model.addAttribute("customers", customers);
         model.addAttribute("vehicles", vehicles);
         return "booking/book-vehicle";
     }
 
     @PostMapping("/add")
-    public String createBooking(@RequestParam Long customerId, @RequestParam Long vehicleId, @RequestParam int durationDays, Model model) {
+    public String createBooking(@RequestParam Long customerId, @RequestParam Long vehicleId,
+            @RequestParam int durationDays, Model model) {
         try {
             Long bookingId = bookingService.createBooking(customerId, vehicleId, durationDays);
             return "redirect:/payments/process?bookingId=" + bookingId;
@@ -63,7 +64,9 @@ public class BookingController {
     public String processReturn(@RequestParam Long bookingId) {
         try {
             bookingService.returnVehicle(bookingId);
-        } catch (Exception e) {}
+        } catch (Exception e) {
+            System.err.println("Error processing return: " + e.getMessage());
+        }
         return "redirect:/bookings/list";
     }
 
@@ -71,7 +74,10 @@ public class BookingController {
     public String cancelBooking(@PathVariable Long id) {
         try {
             bookingService.cancelBooking(id);
-        } catch (Exception e) {}
+        } catch (Exception e) {
+            System.err.println("Error processing cancellation: " + e.getMessage());
+        }
+
         return "redirect:/bookings/list";
     }
 }
