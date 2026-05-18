@@ -17,8 +17,12 @@ public class CashPayment extends Payment {
         this.receiptNumber = receiptNumber;
     }
 
-    public String getReceiptNumber() { return receiptNumber; }
-    public void setReceiptNumber(String receiptNumber) { this.receiptNumber = receiptNumber; }
+    public String getReceiptNumber() { 
+        return receiptNumber; 
+    }
+    public void setReceiptNumber(String receiptNumber) { 
+        this.receiptNumber = receiptNumber; 
+    }
 
     @Override
     public boolean processPayment() {
