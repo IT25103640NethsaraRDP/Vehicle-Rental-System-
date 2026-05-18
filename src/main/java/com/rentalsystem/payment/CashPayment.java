@@ -10,7 +10,9 @@ public class CashPayment extends Payment {
 
     private String receiptNumber;
 
-    public CashPayment() {}
+    public CashPayment() {
+        
+    }
 
     public CashPayment(Booking booking, double amount, String receiptNumber) {
         super(booking, amount);
